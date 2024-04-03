@@ -1,10 +1,12 @@
-import pandas as pd
-import numpy as np
 import streamlit as st
+from src.extraction import load_data
 
-def load_data(): # funcao responsavel por fazer a leitura do nosso arquivo
-    return pd.read_csv('data/processed/bikes_completed.csv')
+st.set_page_config(layout = 'wide')
 
-df = load_data()
+def main():
+    df_raw = load_data()
 
-st.dataframe(df)
+    st.dataframe(df)
+
+if __name__ == 'main': # "se esse arq foi executado e for o ppal, vamos fazer o carregamento dos dados"
+    main()
