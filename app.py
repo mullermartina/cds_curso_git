@@ -6,7 +6,7 @@ st.set_page_config(layout = 'wide')
 def main():
     df_raw = load_data()
 
-    st.dataframe(df)
+    st.dataframe(df_raw)
 
 if __name__ == 'main': # "se esse arq foi executado e for o ppal, vamos fazer o carregamento dos dados"
     main()
