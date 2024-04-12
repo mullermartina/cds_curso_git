@@ -261,7 +261,7 @@ def rd3_question_7(df):
 def to_excel(df):
     output = BytesIO()
 
-    writer = pd.ExcelWriter(output, engine="xlsxwriter")
+    #writer = pd.ExcelWriter(output, engine="xlsxwriter") comentei pq nao consegui instalar o XlsxWriter
 
     df.to_excel(writer, index=False, sheet_name="Sheet1")
 
