@@ -247,30 +247,30 @@ def rd3_question_7(df):
 
     st.dataframe(df_selected)
 
-    #df_xlsx = to_excel(df_selected)
+    df_xlsx = to_excel(df_selected)
 
-    #st.download_button(
-      #  label="📥 Download Buyinbg Suggestions",
-      #  data=df_xlsx,
-       # file_name="buing_suggestions.xlsx",
-   # )
+    st.download_button(
+        label="📥 Download Buyinbg Suggestions",
+        data=df_xlsx,
+        file_name="buing_suggestions.xlsx",
+    )
 
-    #return None
+    return None
 
 
-#def to_excel(df):
-   # output = BytesIO()
+def to_excel(df):
+    output = BytesIO()
 
-    #writer = pd.ExcelWriter(output, engine="xlsxwriter") comentei pq nao consegui instalar o XlsxWriter
+    writer = pd.ExcelWriter(output, engine="xlsxwriter")
 
-    #df.to_excel(writer, index=False, sheet_name="Sheet1")
+    df.to_excel(writer, index=False, sheet_name="Sheet1")
 
-    #worksheet = writer.sheets["Sheet1"]
+    worksheet = writer.sheets["Sheet1"]
 
-    #worksheet.set_column("A:A", None)
+    worksheet.set_column("A:A", None)
 
-    #writer.save()
+    writer.save()
 
-   # processed_data = output.getvalue()
+    processed_data = output.getvalue()
 
-   # return processed_data
+    return processed_data
